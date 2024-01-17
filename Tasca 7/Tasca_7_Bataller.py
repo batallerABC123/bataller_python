@@ -193,6 +193,20 @@ print(decimal_a_binari(numero))
 '''
 separador(9)
 
+def es_vocal(lletra):
+    vocals = "aeiouAEIOU"
+    return lletra in vocals
 
+def treu_vocals(paraula):
+    return ''.join(letra for letra in paraula if not es_vocal(letra))
 
+def treu_consonants(paraula):
+    return ''.join(letra for letra in paraula if es_vocal(letra))
 
+paraula_exemple = "Em pica l'ou esquerra."
+sense_vocals = treu_vocals(paraula_exemple)
+sense_consonants = treu_consonants(paraula_exemple)
+
+print(f"Paraula original: {paraula_exemple}")
+print(f"Sense vocals: {sense_vocals}")
+print(f"Sense consonants: {sense_consonants}")
